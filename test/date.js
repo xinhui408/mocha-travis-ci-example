@@ -25,10 +25,26 @@ const str = date(23)
 str.should.equal("Good Night")
 done()
 })
-//check out of range Greeting string
-it('When time<5 or time>24, it is out of range, should return Now is too late!',done=>{
+//When 0<= time <5, should return Now is too late!
+it('When 0<= time <5, should return Now is too late!',done=>{
+const str = date(0)
+str.should.equal("It is too late!")
+done()
+})
+it('When 0<= time <5, should return Now is too late!',done=>{
 const str = date(3)
-str.should.equal("Now is too late!")
+str.should.equal("It is too late!")
+done()
+})
+//check out of range Greeting string
+it('When time<0 or time>=24, it is out of range, should return Invalid time value!',done=>{
+const str = date(-1)
+str.should.equal("Invalid time value!")
+done()
+})
+it('When time<0 or time>=24, it is out of range, should return Invalid time value!',done=>{
+const str = date(24)
+str.should.equal("Invalid time value!")
 done()
 })
 })
